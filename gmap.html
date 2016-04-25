@@ -26,67 +26,60 @@ max-width: none;
       center: myLatlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
     map.setOptions({styles: [
-      {
-        "featureType": "administrative.country",
-        "elementType": "geometry.fill",
-        "stylers": [
-          { "visibility": "on" },
-          { "gamma": 3.47 }
-        ]
-      },
-      {
-       "featureType": "road.highway",
-       "stylers": [
-         { "saturation": -100 },
-         { "gamma": 2.86 },
-         { "visibility": "on" }
-       ]
-      },
-      {
-       "featureType": "road.arterial",
-       "stylers": [
-         { "weight": 1 },
-         { "saturation": -100 },
-         { "gamma": 3.47 },
-         { "visibility": "simplified" },
-         { "color": "#eeeeee" }
-       ]
-      },
-      {
-       "featureType": "road.highway",
-       "elementType": "labels",
-       "stylers": [
-         { "visibility": "off" }
-       ]
-      },
-      {
-       "featureType": "administrative",
-       "stylers": [
-         { "visibility": "off" }
-       ]
-      },
-      {
-       "featureType": "administrative.locality",
-       "stylers": [
-         { "visibility": "on" }
-       ]
-      },
-      {
-       "featureType": "administrative.country",
-       "stylers": [
-         { "visibility": "on" }
-       ]
-      }
-    ]});
+  {
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "visibility": "on" },
+      { "gamma": 3.47 }
+    ]
+  },{
+    "featureType": "road.highway",
+    "stylers": [
+      { "saturation": -100 },
+      { "gamma": 2.86 },
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "stylers": [
+      { "weight": 1 },
+      { "saturation": -100 },
+      { "gamma": 3.47 },
+      { "visibility": "simplified" },
+      { "color": "#eeeeee" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "administrative",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "administrative.locality",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "administrative.country",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  }
+]});
     kmlLayer = new google.maps.KmlLayer({
       url: 'https://raw.githubusercontent.com/Substitute59/testgmap/master/bordeaux.kml',
-      suppressInfoWindows: true,
       map: map
     });
-    kmlLayer.addListener('click', function(kmlEvent) {
+    /*kmlLayer.addListener('click', function(kmlEvent) {
       document.location.href = kmlEvent.featureData.snippet;
-    });
+    });*/
   }
 
 </script>
@@ -110,4 +103,3 @@ max-width: none;
 </div><!-- /page -->
 </body>
 </html>
-
